@@ -295,6 +295,28 @@ export default function BigScreenTreePage() {
 
   return (
     <div className="w-screen h-screen overflow-hidden relative select-none">
+      {/* 頂部浮動導覽入口 */}
+      <div className="absolute top-6 left-6 z-30 flex items-center gap-3">
+        <a
+          href="/blessing-tree"
+          className="px-4 py-2 bg-white/12 hover:bg-white/20 backdrop-blur-md border border-white/15 text-white rounded-full text-xs font-semibold tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+          我要送出祝福
+        </a>
+        <a
+          href="/blessing-tree/admin"
+          className="px-4 py-2 bg-white/12 hover:bg-white/20 backdrop-blur-md border border-white/15 text-white rounded-full text-xs font-semibold tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5"
+        >
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          後台管理端
+        </a>
+      </div>
+
       {/* 嵌入動畫專屬 CSS */}
       <style>{`
         /* 星空微閃 */
@@ -645,7 +667,7 @@ export default function BigScreenTreePage() {
           </div>
 
           {/* 展示卡片 */}
-          <div className="w-[450px] bg-[#fffcfb] rounded-[32px] p-6 shadow-[0_24px_64px_rgba(73,54,60,0.35)] border border-rose/15 flex flex-col items-center transform scale-100 transition-transform duration-500 animate-scale-up">
+          <div className="w-[90%] max-w-[450px] bg-[#fffcfb] rounded-[32px] p-6 shadow-[0_24px_64px_rgba(73,54,60,0.35)] border border-rose/15 flex flex-col items-center transform scale-100 transition-transform duration-500 animate-scale-up">
             {/* 照片區 */}
             {currentShowcase.photo && (
               <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-inner bg-champagne/10 mb-4 border border-rose/5">
@@ -740,7 +762,7 @@ export default function BigScreenTreePage() {
           onClick={() => setSelectedSubmission(null)}
         >
           <div
-            className="w-[480px] bg-white rounded-3xl p-5 shadow-card max-h-[85vh] flex flex-col justify-between overflow-y-auto"
+            className="w-[90%] max-w-[480px] bg-white rounded-3xl p-5 shadow-card max-h-[85vh] flex flex-col justify-between overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* 頂部關閉 */}
